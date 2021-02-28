@@ -1,0 +1,21 @@
+.Ledge {
+  display: grid;
+  grid-template:
+    "name menu" auto /
+    35% 65%;
+  width: 100%;
+  height: 160px;
+  background-color: rgb(32, 34, 34);
+  background-image: linear-gradient(rgb(32, 34, 34), rgb(172, 172, 166));
+  position: fixed;
+  @media (max-width: 360px) {
+    grid-template:
+      "name" 60px
+      "menu";
+  }
+  @media (max-width: 420px) {
+    grid-template:
+      "name" 60px
+      "menu";
+  }
+}
