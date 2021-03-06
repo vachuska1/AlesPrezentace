@@ -1,15 +1,48 @@
 .Project,
 .Projects {
-  padding: 10px 30px;
+  grid-area: project;
+  padding: 7px 0;
   margin-top: 5px;
   cursor: pointer;
-  @media (max-width: 1024px) {
+  @media (max-width: 560px) {
     display: none;
+  }
+  &--menu {
+    @media (max-width: 560px) {
+      background-image: linear-gradient(rgb(172, 172, 166), rgb(201, 201, 190));
+      width: 90%;
+      position: absolute;
+      left: 38px;
+      top: 5px;
+      padding: 15px 0;
+      font-size: 24px;
+      display: block;
+      color: black;
+    }
+    @media (max-width: 420px) {
+      width: 100%;
+      position: absolute;
+      left: -10px;
+      top: -1px;
+    }
+    @media (max-width: 414px) {
+      width: 104%;
+      position: absolute;
+      left: -10px;
+      top: -1px;
+    }
+    @media (max-width: 360px) {
+      width: 100%;
+      position: absolute;
+      left: -10px;
+      top: -1px;
+    }
   }
 }
 .Project::before {
   content: "Projects";
 }
+
 .Projects::before {
   content: "Projekty";
 }

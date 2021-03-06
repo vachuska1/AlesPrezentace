@@ -1,9 +1,50 @@
 .Menu {
   grid-area: menu;
-  display: flex;
-  margin: auto;
+  position: relative;
+  display: grid;
+  grid-template:
+    "project aboutme flag search menubutton ." 30px /
+    25% 25% 15% 15% 15% 5%;
+  justify-content: center;
+  padding-top: 30px;
   color: rgb(243, 240, 240);
-  font-size: 20px;
-  @media (max-width: 360px) {
+  font-size: 40px;
+  @media (max-width: 2560px) {
+    padding-top: 35px;
+    font-size: 36px;
+  }
+  @media (max-width: 1440px) {
+    padding-top: 40px;
+    font-size: 28px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+  @media (max-width: 560px) {
+    font-size: 30px;
+  }
+  @media (max-width: 540px) {
+    font-size: 30px;
+    grid-template:
+      ". flag search menubutton ." 70px
+      "project project project project project" 100px
+      "aboutme aboutme aboutme aboutme aboutme" 80px /
+      4% 26% 26% 26% 16%;
+  }
+  @media (max-width: 425px) {
+    font-size: 30px;
+    grid-template:
+      ". flag search menubutton ." 54px
+      "project project project project project" 100px
+      "aboutme aboutme aboutme aboutme aboutme" 90px /
+      8% 35% 32% 35% 10%;
+  }
+  @media (max-width: 375px) {
+    font-size: 30px;
+    grid-template:
+      ". flag search menubutton ." 60px
+      "project project project project project" 100px
+      "aboutme aboutme aboutme aboutme aboutme" 90px /
+      10% 26% 26% 26% 20%;
   }
 }

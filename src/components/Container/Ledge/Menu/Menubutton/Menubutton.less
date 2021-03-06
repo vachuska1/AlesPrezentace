@@ -1,12 +1,30 @@
 .Menubutton {
   display: none;
   @media (max-width: 1024px) {
+    grid-area: menubutton;
     display: block;
-    margin-top: 3px;
+    margin: 10px 35px;
     padding: 10px 20px;
     background: url(../../../../../images/menu.svg) no-repeat center/22px;
-    height: 35px;
+    height: 15px;
     width: 35px;
+  }
+  @media (min-width: 560px) {
+    display: none;
+  }
+  &--menu {
+    @media (max-width: 1024px) {
+      grid-area: menubutton;
+      display: block;
+      margin: 10px 35px;
+      padding: 10px 20px;
+      background: url(../../../../../images/cross.svg) no-repeat center/22px;
+      height: 15px;
+      width: 35px;
+    }
+    @media (min-width: 560px) {
+      display: none;
+    }
   }
   // @media (min-width: 724px), (min-width: 414px), (min-width: 280px) {
   //   margin-top: 3px;

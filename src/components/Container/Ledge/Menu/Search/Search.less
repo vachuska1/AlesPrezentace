@@ -1,12 +1,42 @@
 .Search {
-  padding: 6px 20px;
-  margin-top: 5px;
-  background: url(../../../../../images/search.svg) no-repeat center/22px;
+  grid-area: search;
+  margin-top: 25px;
+  margin-left: 80px;
+  background: url(../../../../../images/search.svg) no-repeat center/35px;
   height: 35px;
   width: 35px;
   cursor: pointer;
+  @media (max-width: 2560px) {
+    margin-top: 20px;
+    margin-left: 60px;
+    background: url(../../../../../images/search.svg) no-repeat center/35px;
+    height: 35px;
+    width: 35px;
+  }
+  @media (max-width: 1440px) {
+    margin-top: 15px;
+    background: url(../../../../../images/search.svg) no-repeat center/35px;
+    height: 35px;
+    width: 35px;
+  }
   @media (max-width: 1024px) {
-    margin-top: 0px;
-    padding: 10px 20px;
+    margin-top: 16px;
+    background: url(../../../../../images/search.svg) no-repeat center/30px;
+    height: 30px;
+    width: 30px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 16px;
+    margin-left: 80px;
+    background: url(../../../../../images/search.svg) no-repeat center/26px;
+    height: 26px;
+    width: 26px;
+  }
+  @media (max-width: 540px) {
+    margin-top: 14px;
+    margin-left: 55px;
+    background: url(../../../../../images/search.svg) no-repeat center/26px;
+    height: 26px;
+    width: 26px;
   }
 }

@@ -1,21 +1,89 @@
 .Ledge {
+  z-index: 2;
+  grid-area: ledge;
+  text-align: right;
   display: grid;
   grid-template:
-    "name menu" auto /
-    35% 65%;
+    ". name menu ." 120px /
+    37% 12% 18% 37%;
   width: 100%;
-  height: 160px;
-  background-color: rgb(32, 34, 34);
+  border-bottom: 1px solid black;
+  height: 120px;
   background-image: linear-gradient(rgb(32, 34, 34), rgb(172, 172, 166));
   position: fixed;
+  @media (max-width: 2560px) {
+    text-align: center;
+    grid-template:
+      ". name menu ." auto /
+      24% 20% 46% 10%;
+  }
+  @media (max-width: 1440px) {
+    grid-template:
+      ". name menu" auto /
+      10% 30% 60%;
+  }
+  @media (max-width: 1024px) {
+    grid-template:
+      ". name . menu" auto /
+      10% 25% 5% 65%;
+  }
+  @media (max-width: 768px) {
+    grid-template:
+      ". name . menu" auto /
+      6% 30% 15% 45%;
+  }
+  @media (max-width: 540px) {
+    grid-template:
+      ". name . menu" auto /
+      5% 30% 18% 45%;
+  }
+  @media (max-width: 425px) {
+    height: 155px;
+    grid-template:
+      "name name name" 50px
+      ". menu ." auto /
+      1% 99% 12%;
+  }
+  @media (max-width: 375px) {
+    height: 155px;
+    grid-template:
+      "name name" 50px
+      ". menu" auto /
+      1% 99%;
+  }
   @media (max-width: 360px) {
     grid-template:
-      "name" 60px
+      "name" 50px
       "menu";
   }
-  @media (max-width: 420px) {
+  @media (max-width: 320px) {
     grid-template:
-      "name" 60px
-      "menu";
+      "name name" 50px
+      ". menu" auto /
+      1% 104%;
+  }
+  @media (max-width: 280px) {
+    grid-template:
+      "name name" 50px
+      ". menu" auto /
+      1% 104%;
+  }
+  &--menu {
+    z-index: 2;
+    @media (max-width: 1020px) {
+      height: 120px;
+    }
+    @media (max-width: 540px) {
+      height: 120px;
+    }
+    @media (max-width: 425px) {
+      height: 155px;
+    }
+    @media (max-width: 375px) {
+      height: 155px;
+    }
+    @media (max-width: 360px) {
+      height: 155px;
+    }
   }
 }

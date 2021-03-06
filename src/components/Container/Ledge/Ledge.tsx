@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 export const Ledge: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className="Ledge">
+      <div id="Ledge" className="Ledge">
         <Name />
         <Menu />
       </div>
