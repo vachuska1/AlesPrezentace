@@ -1,50 +1,235 @@
 .Menu {
+  z-index: 2;
+  font-size: 20px;
   grid-area: menu;
-  position: relative;
   display: grid;
+  align-items: center;
+  border-bottom: 1px solid black;
+  color: black;
+  padding: 0 30px;
+  background: linear-gradient(
+    rgba(134, 134, 138, 0.8),
+    rgba(245, 235, 235, 0.8)
+  );
   grid-template:
-    "project aboutme flag search menubutton ." 30px /
-    25% 25% 15% 15% 15% 5%;
-  justify-content: center;
-  padding-top: 30px;
-  color: rgb(243, 240, 240);
-  font-size: 40px;
-  @media (max-width: 2560px) {
-    padding-top: 35px;
-    font-size: 36px;
+    "logo menublock" auto /
+    auto 1fr;
+  &--night {
+    background: linear-gradient(rgba(34, 34, 36, 0.8), rgba(102, 99, 99, 0.8));
+    color: white;
   }
-  @media (max-width: 1440px) {
-    padding-top: 40px;
-    font-size: 28px;
+  a {
+    text-decoration: none;
+    color: rgb(39, 37, 37);
   }
-  @media (max-width: 1024px) {
-    font-size: 22px;
+  &__logo {
+    grid-area: logo;
+    padding-left: 10px;
+    font-weight: bolder;
+    &--night {
+      color: white;
+    }
   }
-  @media (max-width: 560px) {
-    font-size: 30px;
-  }
-  @media (max-width: 540px) {
-    font-size: 30px;
+  &__block {
+    grid-area: menublock;
+    display: grid;
     grid-template:
-      ". flag search menubutton ." 70px
-      "project project project project project" 100px
-      "aboutme aboutme aboutme aboutme aboutme" 80px /
-      4% 26% 26% 26% 16%;
+      "tabs flag search night" 40px/
+      1fr 80px 80px 80px;
   }
-  @media (max-width: 425px) {
-    font-size: 30px;
-    grid-template:
-      ". flag search menubutton ." 54px
-      "project project project project project" 100px
-      "aboutme aboutme aboutme aboutme aboutme" 90px /
-      8% 35% 32% 35% 10%;
+  &__tabs {
+    grid-area: tabs;
+    display: flex;
+    justify-content: flex-end;
+    div {
+      margin: auto 25px;
+      cursor: pointer;
+    }
+    &--project {
+      padding-top: 8px;
+      &--night {
+        color: white;
+      }
+    }
+    &--aboutme {
+      padding-top: 8px;
+      &--night {
+        color: white;
+      }
+    }
   }
-  @media (max-width: 375px) {
-    font-size: 30px;
+  &__flag {
+    grid-area: flag;
+    background: url(../../../../images/english.svg) no-repeat center/35px;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    cursor: pointer;
+    &--czech {
+      grid-area: flag;
+      background: url(../../../../images/czech.svg) no-repeat center/35px;
+      width: 35px;
+      height: 40px;
+      margin: auto;
+      cursor: pointer;
+    }
+  }
+  &__search {
+    grid-area: search;
+    background: url(../../../../images/search.svg) no-repeat center/25px;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    &--night {
+      grid-area: search;
+      background: url(../../../../images/search-night.svg) no-repeat center/25px;
+      margin: auto;
+      width: 25px;
+      height: 25px;
+    }
+  }
+  &__day {
+    grid-area: night;
+    margin: auto;
+    background: url(../../../../images/sun.svg) no-repeat center/30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    &--night {
+      grid-area: night;
+      margin: auto;
+      background: url(../../../../images/moon-night.svg) no-repeat center/30px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+  &__menubutton {
+    display: none;
+    grid-area: menubutton;
+    background: url(../../../../images/menu.svg) no-repeat center/32px;
+    width: 32px;
+    height: 38px;
+    cursor: pointer;
+    margin: auto;
+    &--night {
+      display: none;
+      grid-area: menubutton;
+      background: url(../../../../images/menu-night.svg) no-repeat center/32px;
+      width: 32px;
+      height: 38px;
+      cursor: pointer;
+      margin: auto;
+    }
+    &--close {
+      display: none;
+      grid-area: menubutton;
+      background: url(../../../../images/cross-night.svg) no-repeat center/25px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      margin: auto;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    grid-area: menu;
+    color: black;
+    padding: 0;
     grid-template:
-      ". flag search menubutton ." 60px
-      "project project project project project" 100px
-      "aboutme aboutme aboutme aboutme aboutme" 90px /
-      10% 26% 26% 26% 20%;
+      "logo" 50px
+      "menublock" 200px/
+      1fr;
+    &__block {
+      grid-area: menublock;
+      grid-template:
+        ". flag search night menubutton ." 125px
+        "tabs tabs tabs tabs tabs tabs" 75px/
+        1fr 20% 20% 20% 20% 1fr;
+    }
+    &__tabs {
+      display: none;
+      div {
+        margin: auto 0px;
+      }
+      &--project {
+        margin-right: 10px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 10px 0;
+        background: linear-gradient(rgb(225, 225, 235), rgba(245, 235, 235));
+        &--none {
+          display: none;
+        }
+      }
+      &--aboutme {
+        border-bottom: 1px solid black;
+        background: linear-gradient(rgb(225, 225, 235), rgba(245, 235, 235));
+        margin-right: 10px;
+        padding: 10px 20px;
+      }
+      &--active {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &__menubutton {
+      align-content: center;
+      display: block;
+      &--close {
+        display: block;
+      }
+    }
   }
 }
+
+// .Menu {
+//   grid-area: menu;
+//   position: relative;
+//   display: grid;
+//   grid-template:
+//     "project aboutme flag search menubutton ." 30px /
+//     25% 25% 15% 15% 15% 5%;
+//   justify-content: center;
+//   padding-top: 30px;
+//   color: rgb(243, 240, 240);
+//   font-size: 40px;
+//   @media (max-width: 2560px) {
+//     padding-top: 35px;
+//     font-size: 36px;
+//   }
+//   @media (max-width: 1440px) {
+//     padding-top: 40px;
+//     font-size: 28px;
+//   }
+//   @media (max-width: 1024px) {
+//     font-size: 22px;
+//   }
+//   @media (max-width: 560px) {
+//     font-size: 30px;
+//   }
+//   @media (max-width: 540px) {
+//     font-size: 30px;
+//     grid-template:
+//       ". flag search menubutton ." 70px
+//       "project project project project project" 100px
+//       "aboutme aboutme aboutme aboutme aboutme" 80px /
+//       4% 26% 26% 26% 16%;
+//   }
+//   @media (max-width: 425px) {
+//     font-size: 30px;
+//     grid-template:
+//       ". flag search menubutton ." 54px
+//       "project project project project project" 100px
+//       "aboutme aboutme aboutme aboutme aboutme" 90px /
+//       8% 35% 32% 35% 10%;
+//   }
+//   @media (max-width: 375px) {
+//     font-size: 30px;
+//     grid-template:
+//       ". flag search menubutton ." 60px
+//       "project project project project project" 100px
+//       "aboutme aboutme aboutme aboutme aboutme" 90px /
+//       10% 26% 26% 26% 20%;
+//   }
+// }
